@@ -7,6 +7,8 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json()); //req.body
 
+const port =  process.env.NODE_ENV || 5000
+
 //ROUTES
 
 app.post("/sendOtp", async (req, res) => {
@@ -25,7 +27,6 @@ app.post("/sendOtp", async (req, res) => {
       timestamp: new Date(),
     });
   } catch (err) {
-    console.log('Log: ~> file: index.js ~> line 42 ~> app.post ~> err', err)
 
   } finally {}
 });
@@ -111,6 +112,5 @@ app.get("/getAllRestaurants", async (req, res) => {
 
 //TODO: Add APIs
 
-app.listen(5000, () => {
-  console.log('Log: ~> file: index.js ~> line 120 ~> app.listen ~> 5000', 5000)
+app.listen(port, () => {
 });
