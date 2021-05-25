@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json()); //req.body
 
-const port =  process.env.NODE_ENV || 5000
+const port =  process.env.PORT || 5000
 
 //ROUTES
 
