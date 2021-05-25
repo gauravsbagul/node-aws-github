@@ -11,6 +11,24 @@ const port =  process.env.NODE_ENV || 5000
 
 //ROUTES
 
+
+app.get("/", async (req, res) => {
+  try {
+    const {
+      mobileNumber,
+      userRole
+    } = req.body;
+
+    //TODO: call controllers from here and dump data in database
+
+    res.send("Hello world");
+  } catch (err) {
+
+  } finally {}
+});
+
+
+
 app.post("/sendOtp", async (req, res) => {
   try {
     const {
@@ -30,6 +48,7 @@ app.post("/sendOtp", async (req, res) => {
 
   } finally {}
 });
+
 
 
 app.post("/verifyOtp", async (req, res) => {
